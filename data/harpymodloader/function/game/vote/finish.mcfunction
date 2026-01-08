@@ -2,3 +2,5 @@ scoreboard objectives remove function_vote_mapcode
 scoreboard objectives remove function_vote_mapcode_1
 scoreboard objectives remove function_vote_mapcode_2
 scoreboard objectives remove temp
+
+scoreboard players set $A system_gamePlaying 2

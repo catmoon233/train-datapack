@@ -33,7 +33,8 @@ scoreboard players set $10 number 10
 # system_gamePlayed -> 游戏进行时间
 #  0 -> lobby
 #  1 -> vote
-#  2 -> playing
+#  2 -> vote over
+#  3 -> game playing
 
 execute unless score $A stats_gamePlayed matches -2147483648..2147483647 run scoreboard players set $A stats_gamePlayed 0
 execute unless score $A system_gamePlaying matches -2147483648..2147483647 run scoreboard players set $A system_gamePlaying 0

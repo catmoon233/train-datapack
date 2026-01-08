@@ -3,16 +3,10 @@
 
 # tmm:entityData set @e[type=exposure:photograph_frame,limit=1,sort=nearest] /scoreboard players set @s temp 0
 
-execute as @a if score @s temp matches 0.. if score @s function_vote_mapcode_1 matches -1 run scoreboard players operation @s function_vote_mapcode_1 = @s temp
-execute as @a if score @s temp matches 0.. if score @s function_vote_mapcode_1 matches -1 at @s run playsound entity.experience_orb.pickup master @s ~ ~ ~
-execute as @a if score @s temp matches 0.. if score @s function_vote_mapcode_1 matches -1 run scoreboard players set @s temp -1
+execute as @a if score @s temp matches 0.. if score @s function_vote_mapcode_1 matches -1 run function harpymodloader:game/vote/secondary/selectmap/1
+execute as @a if score @s temp matches 0.. if score @s function_vote_mapcode_1 matches 0.. if score @s function_vote_mapcode_2 matches -1 run function harpymodloader:game/vote/secondary/selectmap/2
+execute as @a if score @s temp matches 0.. if score @s function_vote_mapcode_1 matches 0.. if score @s function_vote_mapcode_2 matches 0.. run function harpymodloader:game/vote/secondary/selectmap/3
 
-execute as @a if score @s temp matches 0.. if score @s function_vote_mapcode_1 matches 0.. if score @s function_vote_mapcode_2 matches -1 run scoreboard players operation @s function_vote_mapcode_1 = @s temp
-execute as @a if score @s temp matches 0.. if score @s function_vote_mapcode_1 matches 0.. if score @s function_vote_mapcode_2 matches -1 at @s run playsound entity.experience_orb.pickup master @s ~ ~ ~
-execute as @a if score @s temp matches 0.. if score @s function_vote_mapcode_1 matches 0.. if score @s function_vote_mapcode_2 matches -1 run scoreboard players set @s temp -1
-
-execute as @a if score @s temp matches 0.. if score @s function_vote_mapcode_1 matches 0.. if score @s function_vote_mapcode_2 matches 0.. at @s run playsound entity.villager.no master @s ~ ~ ~
-execute as @a if score @s temp matches 0.. if score @s function_vote_mapcode_1 matches 0.. if score @s function_vote_mapcode_2 matches 0.. run scoreboard players set @s temp -1
 
 ### 地图计算票数
 scoreboard players set $A function_vote_mapcode 0

@@ -9,6 +9,8 @@ scoreboard players set @a function_vote_mapcode_2 -1
 scoreboard objectives add temp dummy
 scoreboard players set @a temp -1
 
+scoreboard players set $A system_gamePlaying 1
+
 
 
 # system_mapCode -> Code of current map
