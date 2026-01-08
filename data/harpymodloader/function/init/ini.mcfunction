@@ -15,7 +15,16 @@ scoreboard objectives add debug_mode dummy
 scoreboard objectives add number dummy
 
 scoreboard players set $10 number 10
+scoreboard players set $20 number 20
+scoreboard players set $1200 number 1200
 
+## 计时器
+scoreboard objectives add timer dummy
+scoreboard objectives add timer_minute dummy
+scoreboard objectives add timer_second dummy
+scoreboard objectives add timer_tick dummy
+scoreboard objectives add timer_half_tick dummy
+scoreboard players set $A timer 0
 
 ## 计分项初始化赋值
 

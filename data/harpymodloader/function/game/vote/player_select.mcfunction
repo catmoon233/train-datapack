@@ -1,6 +1,4 @@
 
-### TODO:集成性能优化 | 玩家投票处理
-
 # tmm:entityData set @e[type=exposure:photograph_frame,limit=1,sort=nearest] /scoreboard players set @s temp 0
 
 execute as @a if score @s temp matches 0.. if score @s function_vote_mapcode_1 matches -1 if score @s function_vote_mapcode_2 matches -1 run function harpymodloader:game/vote/secondary/selectmap/1
@@ -10,23 +8,45 @@ execute as @a if score @s temp matches 0.. if score @s function_vote_mapcode_1 m
 execute as @a if score @s temp matches 0.. if score @s function_vote_mapcode_1 matches 0.. if score @s function_vote_mapcode_2 matches 0.. run function harpymodloader:game/vote/secondary/selectmap/3
 ### 地图计算票数
 scoreboard players set $A function_vote_mapcode 0
-execute as @a[scores={function_vote_mapcode_1=0}] run scoreboard players add $A function_vote_mapcode 1
-execute as @a[scores={function_vote_mapcode_2=0}] run scoreboard players add $A function_vote_mapcode 1
-scoreboard players operation $A function_vote_mapcode *= $10 number
-execute as @a[scores={function_vote_mapcode_1=1}] run scoreboard players add $A function_vote_mapcode 1
-execute as @a[scores={function_vote_mapcode_2=1}] run scoreboard players add $A function_vote_mapcode 1
-scoreboard players operation $A function_vote_mapcode *= $10 number
-execute as @a[scores={function_vote_mapcode_1=2}] run scoreboard players add $A function_vote_mapcode 1
-execute as @a[scores={function_vote_mapcode_2=2}] run scoreboard players add $A function_vote_mapcode 1
-scoreboard players operation $A function_vote_mapcode *= $10 number
-execute as @a[scores={function_vote_mapcode_1=3}] run scoreboard players add $A function_vote_mapcode 1
-execute as @a[scores={function_vote_mapcode_2=3}] run scoreboard players add $A function_vote_mapcode 1
-scoreboard players operation $A function_vote_mapcode *= $10 number
-execute as @a[scores={function_vote_mapcode_1=4}] run scoreboard players add $A function_vote_mapcode 1
-execute as @a[scores={function_vote_mapcode_2=4}] run scoreboard players add $A function_vote_mapcode 1
-scoreboard players operation $A function_vote_mapcode *= $10 number
-execute as @a[scores={function_vote_mapcode_1=5}] run scoreboard players add $A function_vote_mapcode 1
-execute as @a[scores={function_vote_mapcode_2=5}] run scoreboard players add $A function_vote_mapcode 1
+scoreboard players set $A function_vote_mapcode_display_0 0
+scoreboard players set $A function_vote_mapcode_display_1 0
+scoreboard players set $A function_vote_mapcode_display_2 0
+scoreboard players set $A function_vote_mapcode_display_3 0
+scoreboard players set $A function_vote_mapcode_display_4 0
+scoreboard players set $A function_vote_mapcode_display_5 0
+
+
+execute as @a[scores={function_vote_mapcode_1=0}] run scoreboard players add $A function_vote_mapcode_display_0 1
+execute as @a[scores={function_vote_mapcode_2=0}] run scoreboard players add $A function_vote_mapcode_display_0 1
+
+execute as @a[scores={function_vote_mapcode_1=1}] run scoreboard players add $A function_vote_mapcode_display_1 1
+execute as @a[scores={function_vote_mapcode_2=1}] run scoreboard players add $A function_vote_mapcode_display_1 1
+
+execute as @a[scores={function_vote_mapcode_1=2}] run scoreboard players add $A function_vote_mapcode_display_2 1
+execute as @a[scores={function_vote_mapcode_2=2}] run scoreboard players add $A function_vote_mapcode_display_2 1
+
+execute as @a[scores={function_vote_mapcode_1=3}] run scoreboard players add $A function_vote_mapcode_display_3 1
+execute as @a[scores={function_vote_mapcode_2=3}] run scoreboard players add $A function_vote_mapcode_display_3 1
+
+execute as @a[scores={function_vote_mapcode_1=4}] run scoreboard players add $A function_vote_mapcode_display_4 1
+execute as @a[scores={function_vote_mapcode_2=4}] run scoreboard players add $A function_vote_mapcode_display_4 1
+
+execute as @a[scores={function_vote_mapcode_1=5}] run scoreboard players add $A function_vote_mapcode_display_5 1
+execute as @a[scores={function_vote_mapcode_2=5}] run scoreboard players add $A function_vote_mapcode_display_5 1
 
 ### 显示票数
-title @a actionbar {"text": "","extra": [{"score": {"name": "$A", "objective": "function_vote_mapcode"}}]}
+
+scoreboard players operation $A function_vote_mapcode = $A function_vote_mapcode_display_0
+execute if score $A function_vote_mapcode_display_1 > $A function_vote_mapcode run scoreboard players operation $A function_vote_mapcode = $A function_vote_mapcode_display_1
+execute if score $A function_vote_mapcode_display_2 > $A function_vote_mapcode run scoreboard players operation $A function_vote_mapcode = $A function_vote_mapcode_display_2
+execute if score $A function_vote_mapcode_display_3 > $A function_vote_mapcode run scoreboard players operation $A function_vote_mapcode = $A function_vote_mapcode_display_3
+execute if score $A function_vote_mapcode_display_4 > $A function_vote_mapcode run scoreboard players operation $A function_vote_mapcode = $A function_vote_mapcode_display_4
+
+execute if score $A function_vote_mapcode = $A function_vote_mapcode_display_0 run scoreboard players set $A system_mapCode 0
+execute if score $A function_vote_mapcode = $A function_vote_mapcode_display_1 run scoreboard players set $A system_mapCode 1
+execute if score $A function_vote_mapcode = $A function_vote_mapcode_display_2 run scoreboard players set $A system_mapCode 2
+execute if score $A function_vote_mapcode = $A function_vote_mapcode_display_3 run scoreboard players set $A system_mapCode 3
+execute if score $A function_vote_mapcode = $A function_vote_mapcode_display_4 run scoreboard players set $A system_mapCode 4
+execute if score $A function_vote_mapcode = $A function_vote_mapcode_display_5 run scoreboard players set $A system_mapCode 5
+
+title @a actionbar {"text": "","extra": [{"text": "\u00a7r海盗船 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_1"}},{"text": " \u00a7r| \u00a7r飞艇 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_2"}},{"text": " \u00a7r| \u00a7r星穹列车V2 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_3"}},{"text": " \u00a7r| \u00a7r原版 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_4"}},{"text": " \u00a7r| \u00a7r星穹列车放大化 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_5"}},{"text": " \u00a7r| \u00a7r随机 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_6"}}]}
