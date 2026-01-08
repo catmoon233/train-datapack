@@ -1,11 +1,11 @@
 
-# tmm:entityData set @e[type=exposure:photograph_frame,limit=1,sort=nearest] /scoreboard players set @s temp 0
 
 execute as @a if score @s temp matches 0.. if score @s function_vote_mapcode_1 matches -1 if score @s function_vote_mapcode_2 matches -1 run function harpymodloader:game/vote/secondary/selectmap/1
 
 execute as @a if score @s temp matches 0.. if score @s function_vote_mapcode_1 matches 0.. if score @s function_vote_mapcode_2 matches -1 run function harpymodloader:game/vote/secondary/selectmap/2
 
 execute as @a if score @s temp matches 0.. if score @s function_vote_mapcode_1 matches 0.. if score @s function_vote_mapcode_2 matches 0.. run function harpymodloader:game/vote/secondary/selectmap/3
+
 ### 地图计算票数
 scoreboard players set $A function_vote_mapcode 0
 scoreboard players set $A function_vote_mapcode_display_0 0
@@ -49,4 +49,13 @@ execute if score $A function_vote_mapcode = $A function_vote_mapcode_display_3 r
 execute if score $A function_vote_mapcode = $A function_vote_mapcode_display_4 run scoreboard players set $A system_mapCode 4
 execute if score $A function_vote_mapcode = $A function_vote_mapcode_display_5 run scoreboard players set $A system_mapCode 5
 
-title @a actionbar {"text": "","extra": [{"text": "\u00a7r海盗船 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_1"}},{"text": " \u00a7r| \u00a7r飞艇 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_2"}},{"text": " \u00a7r| \u00a7r星穹列车V2 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_3"}},{"text": " \u00a7r| \u00a7r原版 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_4"}},{"text": " \u00a7r| \u00a7r星穹列车放大化 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_5"}},{"text": " \u00a7r| \u00a7r随机 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_6"}}]}
+title @a actionbar {"text": "","extra": [{"text": "\u00a7r海盗船 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_0"},"color": "gray"},{"text": " \u00a7r| \u00a7r飞艇 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_1"},"color": "gray"},{"text": " \u00a7r| \u00a7r星穹列车V2 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_2"},"color": "gray"},{"text": " \u00a7r| \u00a7r原版 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_3"},"color": "gray"},{"text": " \u00a7r| \u00a7r星穹列车放大化 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_4"},"color": "gray"},{"text": " \u00a7r| \u00a7r随机 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_5"},"color": "gray"}]}
+
+### TODO：显示选中
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=0}] at @s run particle egg_crack ~ ~ ~ 15 0 0 1 1 force @a[scores={function_vote_mapcode_1=0}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=0}] at @s run particle egg_crack ~ ~ ~ -15 0 0 1 1 force @a[scores={function_vote_mapcode_1=0}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=0}] at @s run particle egg_crack ~ ~ ~ 15 0 0 1 1 force @a[scores={function_vote_mapcode_2=0}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=0}] at @s run particle egg_crack ~ ~ ~ -15 0 0 1 1 force @a[scores={function_vote_mapcode_2=0}]
+
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest] if score @s function_vote_mapcode = $A system_mapCode at @s run particle flame ~ ~ ~ 15 0 0 1 1 force @a
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest] if score @s function_vote_mapcode = $A system_mapCode at @s run particle flame ~ ~ ~ -15 0 0 1 1 force @a
