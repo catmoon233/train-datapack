@@ -12,6 +12,9 @@ scoreboard objectives add player_enter custom:leave_game
 
 ## 调试数据
 scoreboard objectives add debug_mode dummy
+scoreboard objectives add number dummy
+
+scoreboard players set $10 number 10
 
 
 ## 计分项初始化赋值
@@ -36,6 +39,7 @@ execute unless score $A stats_gamePlayed matches -2147483648..2147483647 run sco
 execute unless score $A system_gamePlaying matches -2147483648..2147483647 run scoreboard players set $A system_gamePlaying 0
 execute unless score $A system_mapCode matches -2147483648..2147483647 run scoreboard players set $A system_mapCode 1
 execute unless score $A debug_mode matches -2147483648..2147483647 run scoreboard players set $A debug_mode 0
+
 
 
 ## 监听
