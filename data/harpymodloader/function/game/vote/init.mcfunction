@@ -31,6 +31,7 @@ tmm:entityData set @e[type=exposure:photograph_frame,limit=1,scores={function_vo
 tmm:entityData set @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=3}] /scoreboard players set @s temp 3
 tmm:entityData set @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=4}] /scoreboard players set @s temp 4
 tmm:entityData set @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=5}] /scoreboard players set @s temp 5
+
 # system_mapCode -> Code of current map
 #  1 = 海盗船       areas1
 #  2 = 飞艇         areas2

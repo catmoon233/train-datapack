@@ -52,20 +52,39 @@ execute if score $A function_vote_mapcode = $A function_vote_mapcode_display_5 r
 title @a actionbar {"text": "","extra": [{"text": "\u00a7r海盗船 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_0"},"color": "gray"},{"text": " \u00a7r| \u00a7r飞艇 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_1"},"color": "gray"},{"text": " \u00a7r| \u00a7r星穹列车V2 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_2"},"color": "gray"},{"text": " \u00a7r| \u00a7r原版 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_3"},"color": "gray"},{"text": " \u00a7r| \u00a7r星穹列车放大化 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_4"},"color": "gray"},{"text": " \u00a7r| \u00a7r随机 "},{"score": {"name": "$A","objective": "function_vote_mapcode_display_5"},"color": "gray"}]}
 
 ### TODO：显示选中
-execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=0}] at @s run particle egg_crack ~ ~-1.4 ~ 0.75 0 0 1 1 force @a
-execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=0}] at @s run particle egg_crack ~ ~-1.4 ~ -0.75 0 0 1 1 force @a[scores={function_vote_mapcode_1=0}]
-execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=0}] at @s run particle egg_crack ~ ~-1.4 ~ 0.75 0 0 1 1 force @a[scores={function_vote_mapcode_2=0}]
-execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=0}] at @s run particle egg_crack ~ ~-1.4 ~ -0.75 0 0 1 1 force @a[scores={function_vote_mapcode_2=0}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=0}] at @s run particle egg_crack ~ ~-1.4 ~ 0.7 0 0 1 1 force @a[scores={function_vote_mapcode_1=0}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=0}] at @s run particle egg_crack ~ ~-1.4 ~ -0.7 0 0 1 1 force @a[scores={function_vote_mapcode_1=0}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=0}] at @s run particle egg_crack ~ ~-1.4 ~ 0.7 0 0 1 1 force @a[scores={function_vote_mapcode_2=0}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=0}] at @s run particle egg_crack ~ ~-1.4 ~ -0.7 0 0 1 1 force @a[scores={function_vote_mapcode_2=0}]
 
-execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=1}] at @s run particle egg_crack ~ ~-1.4 ~ 0.75 0 0 1 1 force @a[scores={function_vote_mapcode_1=1}]
-execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=1}] at @s run particle egg_crack ~ ~-1.4 ~ -0.75 0 0 1 1 force @a[scores={function_vote_mapcode_1=1}]
-execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=1}] at @s run particle egg_crack ~ ~-1.4 ~ 0.75 0 0 1 1 force @a[scores={function_vote_mapcode_2=1}]
-execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=1}] at @s run particle egg_crack ~ ~-1.4 ~ -0.75 0 0 1 1 force @a[scores={function_vote_mapcode_2=1}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=1}] at @s run particle egg_crack ~ ~-1.4 ~ 0.7 0 0 1 1 force @a[scores={function_vote_mapcode_1=1}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=1}] at @s run particle egg_crack ~ ~-1.4 ~ -0.7 0 0 1 1 force @a[scores={function_vote_mapcode_1=1}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=1}] at @s run particle egg_crack ~ ~-1.4 ~ 0.7 0 0 1 1 force @a[scores={function_vote_mapcode_2=1}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=1}] at @s run particle egg_crack ~ ~-1.4 ~ -0.7 0 0 1 1 force @a[scores={function_vote_mapcode_2=1}]
 
-execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=2}] at @s run particle egg_crack ~ ~-1.4 ~ 0.75 0 0 1 1 force @a[scores={function_vote_mapcode_1=2}]
-execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=2}] at @s run particle egg_crack ~ ~-1.4 ~ -0.75 0 0 1 1 force @a[scores={function_vote_mapcode_1=2}]
-execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=2}] at @s run particle egg_crack ~ ~-1.4 ~ 0.75 0 0 1 1 force @a[scores={function_vote_mapcode_2=2}]
-execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=2}] at @s run particle egg_crack ~ ~-1.4 ~ -0.75 0 0 1 1 force @a[scores={function_vote_mapcode_2=2}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=2}] at @s run particle egg_crack ~ ~-1.4 ~ 0.7 0 0 1 1 force @a[scores={function_vote_mapcode_1=2}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=2}] at @s run particle egg_crack ~ ~-1.4 ~ -0.7 0 0 1 1 force @a[scores={function_vote_mapcode_1=2}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=2}] at @s run particle egg_crack ~ ~-1.4 ~ 0.7 0 0 1 1 force @a[scores={function_vote_mapcode_2=2}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=2}] at @s run particle egg_crack ~ ~-1.4 ~ -0.7 0 0 1 1 force @a[scores={function_vote_mapcode_2=2}]
+
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=3}] at @s run particle egg_crack ~ ~-1.4 ~ 0.7 0 0 1 1 force @a[scores={function_vote_mapcode_1=3}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=3}] at @s run particle egg_crack ~ ~-1.4 ~ -0.7 0 0 1 1 force @a[scores={function_vote_mapcode_1=3}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=3}] at @s run particle egg_crack ~ ~-1.4 ~ 0.7 0 0 1 1 force @a[scores={function_vote_mapcode_2=3}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=3}] at @s run particle egg_crack ~ ~-1.4 ~ -0.7 0 0 1 1 force @a[scores={function_vote_mapcode_2=3}]
+
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=4}] at @s run particle egg_crack ~ ~-1.4 ~ 0.7 0 0 1 1 force @a[scores={function_vote_mapcode_1=4}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=4}] at @s run particle egg_crack ~ ~-1.4 ~ -0.7 0 0 1 1 force @a[scores={function_vote_mapcode_1=4}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=4}] at @s run particle egg_crack ~ ~-1.4 ~ 0.7 0 0 1 1 force @a[scores={function_vote_mapcode_2=4}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=4}] at @s run particle egg_crack ~ ~-1.4 ~ -0.7 0 0 1 1 force @a[scores={function_vote_mapcode_2=4}]
+
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=5}] at @s run particle egg_crack ~ ~-1.4 ~ 0.7 0 0 1 1 force @a[scores={function_vote_mapcode_1=5}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=5}] at @s run particle egg_crack ~ ~-1.4 ~ -0.7 0 0 1 1 force @a[scores={function_vote_mapcode_1=5}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=5}] at @s run particle egg_crack ~ ~-1.4 ~ 0.7 0 0 1 1 force @a[scores={function_vote_mapcode_2=5}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=5}] at @s run particle egg_crack ~ ~-1.4 ~ -0.7 0 0 1 1 force @a[scores={function_vote_mapcode_2=5}]
+
+
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest] if score @s function_vote_mapcode = $A function_vote_mapcode at @s run particle egg_crack ~ ~-1.4 ~ 0.7 0 0 1 1 force @a[scores={function_vote_mapcode_1=5}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest] if score @s function_vote_mapcode = $A function_vote_mapcode at @s run particle egg_crack ~ ~-1.4 ~ -0.7 0 0 1 1 force @a[scores={function_vote_mapcode_1=5}]
 
 
 execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest] if score @s function_vote_mapcode = $A system_mapCode at @s run particle flame ~ ~ ~ 15 0 0 1 1 force @a
