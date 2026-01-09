@@ -37,10 +37,15 @@ execute as @a[scores={function_vote_mapcode_2=5}] run scoreboard players add $A 
 ### 显示票数
 
 scoreboard players operation $A function_vote_mapcode = $A function_vote_mapcode_display_0
-execute if score $A function_vote_mapcode_display_1 > $A function_vote_mapcode run scoreboard players operation $A function_vote_mapcode = $A function_vote_mapcode_display_1
-execute if score $A function_vote_mapcode_display_2 > $A function_vote_mapcode run scoreboard players operation $A function_vote_mapcode = $A function_vote_mapcode_display_2
-execute if score $A function_vote_mapcode_display_3 > $A function_vote_mapcode run scoreboard players operation $A function_vote_mapcode = $A function_vote_mapcode_display_3
-execute if score $A function_vote_mapcode_display_4 > $A function_vote_mapcode run scoreboard players operation $A function_vote_mapcode = $A function_vote_mapcode_display_4
+
+function harpymodloader:game/vote/secondary/sort/5
+function harpymodloader:game/vote/secondary/sort/5
+function harpymodloader:game/vote/secondary/sort/5
+function harpymodloader:game/vote/secondary/sort/5
+function harpymodloader:game/vote/secondary/sort/5
+function harpymodloader:game/vote/secondary/sort/5
+
+
 
 execute if score $A function_vote_mapcode = $A function_vote_mapcode_display_0 run scoreboard players set $A system_mapCode 0
 execute if score $A function_vote_mapcode = $A function_vote_mapcode_display_1 run scoreboard players set $A system_mapCode 1
