@@ -83,8 +83,8 @@ execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={functi
 execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=5}] at @s run particle egg_crack ~ ~-1.4 ~ -0.7 0 0 1 1 force @a[scores={function_vote_mapcode_2=5}]
 
 
-execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest] if score @s function_vote_mapcode = $A function_vote_mapcode at @s run particle egg_crack ~ ~-1.4 ~ 0.7 0 0 1 1 force @a[scores={function_vote_mapcode_1=5}]
-execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest] if score @s function_vote_mapcode = $A function_vote_mapcode at @s run particle egg_crack ~ ~-1.4 ~ -0.7 0 0 1 1 force @a[scores={function_vote_mapcode_1=5}]
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest] if score @s function_vote_mapcode = $A function_vote_mapcode at @s run particle flame ~ ~-1.4 ~ 0.7 0 0 1 1 force @a
+execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest] if score @s function_vote_mapcode = $A function_vote_mapcode at @s run particle flame ~ ~-1.4 ~ -0.7 0 0 1 1 force @a
 
 
 execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest] if score @s function_vote_mapcode = $A system_mapCode at @s run particle flame ~ ~ ~ 15 0 0 1 1 force @a
