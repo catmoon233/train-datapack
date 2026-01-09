@@ -2,7 +2,7 @@
 
 function harpymodloader:init/ini
 tellraw @a "\u00a77---------------------------"
-tellraw @a "SR-TMM | 0.0.14 init RC(\u00a7e0\u00a7r)\u00a7r - \u00a77 ⚠"
+tellraw @a "SR-TMM | 0.0.15 init RC(\u00a7e0\u00a7r)\u00a7r - \u00a77 >⚠<"
 tellraw @a "\u00a77---------------------------"
 function harpymodloader:game/vote/finish
 function harpymodloader:game/vote/init
