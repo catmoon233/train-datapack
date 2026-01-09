@@ -1,3 +1,2 @@
-# 当游戏开始时执行的function语句
+# 当start后处理加载地图、职业分配后执行的function语句
 
-function harpymodloader:game/vote/init
