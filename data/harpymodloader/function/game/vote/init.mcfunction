@@ -17,13 +17,9 @@ scoreboard objectives add function_vote_mapcode_display_2 dummy
 scoreboard objectives add function_vote_mapcode_display_3 dummy
 scoreboard objectives add function_vote_mapcode_display_4 dummy
 scoreboard objectives add function_vote_mapcode_display_5 dummy
+scoreboard objectives add function_vote_mapcode_display_6 dummy
 
-execute positioned -5.5 1.5 9.03 run execute unless entity @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=0}] run scoreboard players set @e[type=exposure:photograph_frame,limit=1,sort=nearest] function_vote_mapcode 0
-execute positioned -5.5 1.5 9.03 run execute unless entity @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=1}] run scoreboard players set @e[type=exposure:photograph_frame,limit=1,sort=nearest,distance=2.8..3.2] function_vote_mapcode 1
-execute positioned -5.5 1.5 9.03 run execute unless entity @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=2}] run scoreboard players set @e[type=exposure:photograph_frame,limit=1,sort=nearest,distance=5.8..6.2] function_vote_mapcode 2
-execute positioned -5.5 1.5 9.03 run execute unless entity @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=3}] run scoreboard players set @e[type=exposure:photograph_frame,limit=1,sort=nearest,distance=8.8..9.2] function_vote_mapcode 3
-execute positioned -5.5 1.5 9.03 run execute unless entity @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=4}] run scoreboard players set @e[type=exposure:photograph_frame,limit=1,sort=nearest,distance=11.8..12.2] function_vote_mapcode 4
-execute positioned -5.5 1.5 9.03 run execute unless entity @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=5}] run scoreboard players set @e[type=exposure:photograph_frame,limit=1,sort=nearest,distance=14.8..15.2] function_vote_mapcode 5
+function harpymodloader:game/vote/secondary/debug/-1
 
 tmm:entityData set @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=0}] /scoreboard players set @s temp 0
 tmm:entityData set @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=1}] /scoreboard players set @s temp 1
@@ -31,6 +27,7 @@ tmm:entityData set @e[type=exposure:photograph_frame,limit=1,scores={function_vo
 tmm:entityData set @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=3}] /scoreboard players set @s temp 3
 tmm:entityData set @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=4}] /scoreboard players set @s temp 4
 tmm:entityData set @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=5}] /scoreboard players set @s temp 5
+tmm:entityData set @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=6}] /scoreboard players set @s temp 6
 
 # system_mapCode -> Code of current map
 #  1 = 海盗船       areas1
