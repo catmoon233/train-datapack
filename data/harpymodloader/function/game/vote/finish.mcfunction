@@ -15,3 +15,5 @@ scoreboard objectives remove function_vote_mapcode_display_5
 scoreboard objectives remove function_vote_mapcode_display_6
 
 scoreboard players set $A system_gamePlaying 2
+
+tmm:start harpymodloader:modded
