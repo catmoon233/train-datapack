@@ -31,7 +31,7 @@ scoreboard players set $A timer 0
 
  
 # system_mapCode -> Code of current map
-#  1 = 海盗船       areas1
+#  1 = 随机       areas1
 #  2 = 飞艇         areas2
 #  3 = 星穹列车V2   areas3
 #  4 = 原版         areas4
