@@ -1,0 +1,16 @@
+{
+    "criteria": {
+        "start":{
+            "trigger": "player_interacted_with_entity",
+            "conditions": {
+                "entity": {
+                    "type": "interaction",
+                    "nbt": "{Tags:[\"yw.start_game\"]}"
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "yw:game/start"
+    }
+}

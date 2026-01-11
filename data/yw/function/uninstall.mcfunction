@@ -1,0 +1,1 @@
+kill @e[tag=yw.start_game]

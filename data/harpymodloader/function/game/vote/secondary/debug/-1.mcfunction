@@ -1,3 +1,9 @@
+## vote/secondary/debug/-1.mcfunction
+ 
+# 操作变量:
+# postioned {x,y,z}     ->  初始点位置
+# distance= {min..max}  ->  与初始点的距离范围
+
 execute positioned -5.5 1.5 9.03 run execute unless entity @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=0}] run scoreboard players set @e[type=exposure:photograph_frame,limit=1,sort=nearest] function_vote_mapcode 0
 execute positioned -5.5 1.5 9.03 run execute unless entity @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=1}] run scoreboard players set @e[type=exposure:photograph_frame,limit=1,sort=nearest,distance=2.8..3.2] function_vote_mapcode 1
 execute positioned -5.5 1.5 9.03 run execute unless entity @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=2}] run scoreboard players set @e[type=exposure:photograph_frame,limit=1,sort=nearest,distance=5.8..6.2] function_vote_mapcode 2

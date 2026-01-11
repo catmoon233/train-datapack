@@ -1,12 +1,17 @@
 
+### 处理玩家选择地图逻辑
 
 execute as @a if score @s temp matches 0.. if score @s function_vote_mapcode_1 matches -1 if score @s function_vote_mapcode_2 matches -1 run function harpymodloader:game/vote/secondary/selectmap/1
-
 execute as @a if score @s temp matches 0.. if score @s function_vote_mapcode_1 matches 0.. if score @s function_vote_mapcode_2 matches -1 run function harpymodloader:game/vote/secondary/selectmap/2
-
 execute as @a if score @s temp matches 0.. if score @s function_vote_mapcode_1 matches 0.. if score @s function_vote_mapcode_2 matches 0.. run function harpymodloader:game/vote/secondary/selectmap/3
 
 ### 地图计算票数
+
+# | $A function_vote_mapcode -> 总票数（统计）
+# | $A function_vote_mapcode_1 -> 总票数（用于处理）
+
+# | @e[type=exposure:photograph_frame,scores={function_vote_mapcode=0..}] function_vote_mapcode_1 -> 可选项的票数
+
 scoreboard players set $A function_vote_mapcode 0
 scoreboard players set @e[type=exposure:photograph_frame,scores={function_vote_mapcode=0..}] function_vote_mapcode_1 0
 scoreboard players set $A function_vote_mapcode_1 0
@@ -32,14 +37,15 @@ execute as @a[scores={function_vote_mapcode_2=5}] run scoreboard players add @e[
 execute as @a[scores={function_vote_mapcode_1=6}] run scoreboard players add @e[type=exposure:photograph_frame,scores={function_vote_mapcode=6}] function_vote_mapcode_1 1
 execute as @a[scores={function_vote_mapcode_2=6}] run scoreboard players add @e[type=exposure:photograph_frame,scores={function_vote_mapcode=6}] function_vote_mapcode_1 1
 
-
+# 冒泡排序（JAVA版的排序需要调用函数，这是特性）
 execute as @e[type=exposure:photograph_frame,scores={function_vote_mapcode=0..}] run function harpymodloader:game/vote/secondary/sort/5
+
 ### 显示票数
 scoreboard players operation $A function_vote_mapcode = $A function_vote_mapcode_1
 
 title @a actionbar {"text":"","extra":[{"text":"§r随机 "},{"score":{"name":"@e[type=exposure:photograph_frame,scores={function_vote_mapcode=0}]","objective":"function_vote_mapcode_1"},"color":"gray"},{"text":" §r| §r飞艇 "},{"score":{"name":"@e[type=exposure:photograph_frame,scores={function_vote_mapcode=1}]","objective":"function_vote_mapcode_1"},"color":"gray"},{"text":" §r| §r星穹列车V2 "},{"score":{"name":"@e[type=exposure:photograph_frame,scores={function_vote_mapcode=2}]","objective":"function_vote_mapcode_1"},"color":"gray"},{"text":" §r| §r原版 "},{"score":{"name":"@e[type=exposure:photograph_frame,scores={function_vote_mapcode=3}]","objective":"function_vote_mapcode_1"},"color":"gray"},{"text":" §r| §r星穹列车放大化 "},{"score":{"name":"@e[type=exposure:photograph_frame,scores={function_vote_mapcode=4}]","objective":"function_vote_mapcode_1"},"color":"gray"},{"text":" §r| §r海盗船 "},{"score":{"name":"@e[type=exposure:photograph_frame,scores={function_vote_mapcode=5}]","objective":"function_vote_mapcode_1"},"color":"gray"},{"text":" §r| §r宽体原版 "},{"score":{"name":"@e[type=exposure:photograph_frame,scores={function_vote_mapcode=6}]","objective":"function_vote_mapcode_1"},"color":"gray"}]}
 
-### TODO：显示选中
+### 粒子特效（有优化空间）
 execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=0}] at @s run particle egg_crack ~ ~-1.4 ~ 0.7 0 0 1 1 force @a[scores={function_vote_mapcode_1=0}]
 execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=0}] at @s run particle egg_crack ~ ~-1.4 ~ -0.7 0 0 1 1 force @a[scores={function_vote_mapcode_1=0}]
 execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=0}] at @s run particle egg_crack ~ ~-1.4 ~ 0.7 0 0 1 1 force @a[scores={function_vote_mapcode_2=0}]

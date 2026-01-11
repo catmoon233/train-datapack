@@ -1,0 +1,1 @@
+summon text_display ~ ~ ~ {text:'{"text": "开始游戏","color": "red","bold": true}',alignment:"center",see_through:true,billboard:"center",shadow:true,Passengers:[{id:"interaction",Tags:["yw.start_game"]}],Tags:["yw.start_game"]}

@@ -2,5 +2,5 @@
 
 function harpymodloader:init/ini
 tellraw @a "\u00a77---------------------------"
-tellraw @a "SR-TMM | 0.0.25 init RC(\u00a7e0\u00a7r)\u00a7r - \u00a77 >⚠<"
+# tellraw @a "SR-TMM | 0.0.29 init RC(\u00a7e0\u00a7r)\u00a7r - \u00a77 >⚠<"
 tellraw @a "\u00a77---------------------------"
