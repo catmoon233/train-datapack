@@ -29,13 +29,7 @@ scoreboard players set $A timer 0
 ## 计分项初始化赋值
 
 
- 
-# system_mapCode -> Code of current map
-#  1 = 随机       areas1
-#  2 = 飞艇         areas2
-#  3 = 星穹列车V2   areas3
-#  4 = 原版         areas4
-#  5 = 星穹列车Big  araes5
+
 
 # system_gamePlaying -> 游戏阶段
 

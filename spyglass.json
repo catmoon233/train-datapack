@@ -1,0 +1,10 @@
+{
+    "env": {
+        "gameVersion": "1.21.1",
+        "mcmetaSummaryOverrides": {
+            "commands": {
+                "path": "commands.json"
+            }
+        }
+    }
+}

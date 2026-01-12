@@ -3,10 +3,9 @@
 
 
 # 票数不为最高的选项记分板重置
-execute as @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=0..}] unless score @s function_vote_mapcode_1 = $A function_vote_mapcode_1 run scoreboard players reset @s function_vote_mapcode
+execute as @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=0..}] unless score @s function_vote_mapcode_1 = $A function_vote_mapcode_1 run scoreboard players reset @s function_vote_mapcode_1
 # 随机一个现存最高票数的选项
-execute as @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=0..},sort=random] run function harpymodloader:game/vote/secondary/selectmap/secondary/6
-
+function harpymodloader:game/vote/secondary/selectmap/secondary/7
 
 
 # 清除VoteFunction相关记分板

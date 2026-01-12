@@ -39,10 +39,3 @@ tmm:entityData set @e[type=exposure:photograph_frame,limit=1,scores={function_vo
 tmm:entityData set @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=5}] /scoreboard players set @s temp 5
 tmm:entityData set @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=6}] /scoreboard players set @s temp 6
 
-# system_mapCode -> Code of current map
-#  1 = 随机           areas1
-#  2 = 飞艇           areas2
-#  3 = 星穹列车V2     areas3
-#  4 = 原版           areas4
-#  5 = 星穹列车放大化  areas5
-#  0 = 海盗船         random

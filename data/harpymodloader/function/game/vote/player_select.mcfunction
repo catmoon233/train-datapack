@@ -43,7 +43,25 @@ execute as @e[type=exposure:photograph_frame,scores={function_vote_mapcode=0..}]
 ### 显示票数
 scoreboard players operation $A function_vote_mapcode = $A function_vote_mapcode_1
 
-title @a actionbar {"text":"","extra":[{"text":"§r随机 "},{"score":{"name":"@e[type=exposure:photograph_frame,scores={function_vote_mapcode=0}]","objective":"function_vote_mapcode_1"},"color":"gray"},{"text":" §r| §r飞艇 "},{"score":{"name":"@e[type=exposure:photograph_frame,scores={function_vote_mapcode=1}]","objective":"function_vote_mapcode_1"},"color":"gray"},{"text":" §r| §r星穹列车V2 "},{"score":{"name":"@e[type=exposure:photograph_frame,scores={function_vote_mapcode=2}]","objective":"function_vote_mapcode_1"},"color":"gray"},{"text":" §r| §r原版 "},{"score":{"name":"@e[type=exposure:photograph_frame,scores={function_vote_mapcode=3}]","objective":"function_vote_mapcode_1"},"color":"gray"},{"text":" §r| §r星穹列车放大化 "},{"score":{"name":"@e[type=exposure:photograph_frame,scores={function_vote_mapcode=4}]","objective":"function_vote_mapcode_1"},"color":"gray"},{"text":" §r| §r海盗船 "},{"score":{"name":"@e[type=exposure:photograph_frame,scores={function_vote_mapcode=5}]","objective":"function_vote_mapcode_1"},"color":"gray"},{"text":" §r| §r宽体原版 "},{"score":{"name":"@e[type=exposure:photograph_frame,scores={function_vote_mapcode=6}]","objective":"function_vote_mapcode_1"},"color":"gray"}]}
+### Vote Code
+# 0 -> 随机
+# 1 -> 飞艇
+# 2 -> 星穹列车V2
+# 3 -> 原版
+# 4 -> 星穹列车放大化
+# 5 -> 海盗船
+# 6 -> 宽体原版
+
+### Map Code
+# areas1 -> 海盗船
+# areas2 -> 飞艇
+# areas3 -> 星穹列车V2
+# areas4 -> 列车
+# areas5 -> 星穹列车V1
+# areas6 -> 大列车
+
+
+title @a actionbar {"text":"","extra":[{"text":"§r随机 "},{"score":{"name":"@e[type=exposure:photograph_frame,scores={function_vote_mapcode=0}]","objective":"function_vote_mapcode_1"},"color":"gray"},{"text":" §r| §r飞艇 "},{"score":{"name":"@e[type=exposure:photograph_frame,scores={function_vote_mapcode=1}]","objective":"function_vote_mapcode_1"},"color":"gray"},{"text":" §r| §r星穹列车V2 "},{"score":{"name":"@e[type=exposure:photograph_frame,scores={function_vote_mapcode=2}]","objective":"function_vote_mapcode_1"},"color":"gray"},{"text":" §r| §r列车 "},{"score":{"name":"@e[type=exposure:photograph_frame,scores={function_vote_mapcode=3}]","objective":"function_vote_mapcode_1"},"color":"gray"},{"text":" §r| §r星穹列车 "},{"score":{"name":"@e[type=exposure:photograph_frame,scores={function_vote_mapcode=4}]","objective":"function_vote_mapcode_1"},"color":"gray"},{"text":" §r| §r海盗船 "},{"score":{"name":"@e[type=exposure:photograph_frame,scores={function_vote_mapcode=5}]","objective":"function_vote_mapcode_1"},"color":"gray"},{"text":" §r| §r大列车 "},{"score":{"name":"@e[type=exposure:photograph_frame,scores={function_vote_mapcode=6}]","objective":"function_vote_mapcode_1"},"color":"gray"}]}
 
 ### 粒子特效（有优化空间）
 execute as @e[type=exposure:photograph_frame,limit=1,sort=nearest,scores={function_vote_mapcode=0}] at @s run particle egg_crack ~ ~-1.4 ~ 0.7 0 0 1 1 force @a[scores={function_vote_mapcode_1=0}]
