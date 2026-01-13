@@ -92,6 +92,7 @@ kill @e[type=ender_pearl]
 execute if score $A timer matches 900 run title @a times 0t 55t 5t
 execute if score $A timer matches 900 run title @a title ""
 execute if score $A timer matches 900 run title @a subtitle {"text":"","extra": [{"text": "\u00a7e列车将在 \u00a7r\u00a7l45 \u00a7r\u00a7e秒后出发"}]}
+execute if score $A timer matches 900 run execute as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~
 
 execute if score $A timer matches 201 run title @a times 0t 10t 20t
 execute if score $A timer matches 0..200 run title @a title ""
@@ -106,6 +107,13 @@ execute if score $A timer matches 0..79 unless score $A timer_tick_format matche
 execute if score $A timer matches 0..199 if score $A timer_tick_format matches 0..9 run title @a subtitle {"text":"","extra": [{"text": "\u00a7e启程倒计时 \u00a7r\u00a7l| \u00a7r0"},{"score": {"name": "$A","objective": "timer_second"}},{"text": "."},{"score": {"name": "$A","objective": "timer_tick_format"}},{"text": "0"}]}
 execute if score $A timer matches 0..119 if score $A timer_tick_format matches 0..9 run title @a subtitle {"text":"","extra": [{"text": "\u00a7e启程倒计时 \u00a7r\u00a7l| \u00a7e0"},{"score": {"name": "$A","objective": "timer_second"},"color": "yellow"},{"text": "."},{"score": {"name": "$A","objective": "timer_tick_format"},"color": "yellow"},{"text": "0","color": "yellow"}]}
 execute if score $A timer matches 0..79 if score $A timer_tick_format matches 0..9 run title @a subtitle {"text":"","extra": [{"text": "\u00a7e启程倒计时 \u00a7r\u00a7l| \u00a7c0"},{"score": {"name": "$A","objective": "timer_second"},"color": "red"},{"text": "."},{"score": {"name": "$A","objective": "timer_tick_format"},"color": "red"},{"text": "0","color": "red"}]}
+
+execute if score $A timer matches 0..120 if score $A timer_tick matches 0 run execute as @a at @s run playsound minecraft:block.note_block.basedrum master @s ~ ~ ~
+execute if score $A timer matches 0 run execute as @a at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 1
+execute if score $A timer matches 0..120 if score $A timer_tick matches 0 run execute as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~
+execute if score $A timer matches 0..120 if score $A timer_tick matches 5 run execute as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 0.5
+execute if score $A timer matches 0..120 if score $A timer_tick matches 10 run execute as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 0.5
+execute if score $A timer matches 0..120 if score $A timer_tick matches 15 run execute as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 0.5
 
 
 execute if score $A timer matches -20 run function harpymodloader:game/vote/finish
