@@ -1,0 +1,3 @@
+
+item replace entity @s[scores={function_vote_ready=0}] container.4 with minecraft:ender_pearl[custom_name="{\"text\": \"准备\",\"color\": \"green\",\"extra\": [{\"text\": \" (右键使用)\",\"color\":\"gray\"}]}"] 1
+item replace entity @s[scores={function_vote_ready=1}] container.4 with minecraft:ender_pearl[custom_name="{\"text\": \"取消准备\",\"color\": \"red\",\"extra\": [{\"text\": \" (右键使用)\",\"color\":\"gray\"}]}",enchantment_glint_override=true] 1

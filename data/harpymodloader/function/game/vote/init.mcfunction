@@ -15,8 +15,21 @@ scoreboard players set @a function_vote_mapcode_2 -1
 scoreboard objectives add temp dummy
 scoreboard players set @a temp -1
 
+# temp_1用于存储玩家准备状态选择
+scoreboard objectives add temp_1 minecraft.used:ender_pearl
+scoreboard players set @a temp_1 0
+
+# temp_2用于存储玩家末影珍珠的数量
+scoreboard objectives add temp_2 dummy
+scoreboard players set @a temp_2 0
+
 # $A的此值代表游戏阶段
 scoreboard players set $A system_gamePlaying 1
+
+# 玩家是否处于准备状态
+scoreboard objectives add function_vote_ready dummy
+scoreboard players set @a function_vote_ready 0
+
 
 # *放弃了一个变量存所有数据的写法，是不是很大胆*
 scoreboard objectives add function_vote_mapcode_display_0 dummy

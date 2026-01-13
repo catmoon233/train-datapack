@@ -14,34 +14,36 @@ scoreboard objectives add player_enter custom:leave_game
 scoreboard objectives add debug_mode dummy
 scoreboard objectives add number dummy
 
+scoreboard players set $5 number 5
 scoreboard players set $10 number 10
 scoreboard players set $20 number 20
 scoreboard players set $1200 number 1200
 
 ## 计时器
+scoreboard objectives add setting_timer_type dummy
+scoreboard players set $A setting_timer_type 0
 scoreboard objectives add timer dummy
 scoreboard objectives add timer_minute dummy
 scoreboard objectives add timer_second dummy
 scoreboard objectives add timer_tick dummy
 scoreboard objectives add timer_half_tick dummy
+scoreboard objectives add timer_tick_format dummy
 scoreboard players set $A timer 0
 
 ## 计分项初始化赋值
 
-
-
-
 # system_gamePlaying -> 游戏阶段
-
-# system_gamePlayed -> 游戏进行时间
 #  0 -> lobby
 #  1 -> vote
 #  2 -> vote over
-#  3 -> game playing
+#  100 -> game playing
+
+# system_gamePlayed -> 游戏进行时间
+
 
 execute unless score $A stats_gamePlayed matches -2147483648..2147483647 run scoreboard players set $A stats_gamePlayed 0
 execute unless score $A system_gamePlaying matches -2147483648..2147483647 run scoreboard players set $A system_gamePlaying 0
-execute unless score $A system_mapCode matches -2147483648..2147483647 run scoreboard players set $A system_mapCode 1
+execute unless score $A system_mapCode matches -2147483648..2147483647 run scoreboard players set $A system_mapCode 0
 execute unless score $A debug_mode matches -2147483648..2147483647 run scoreboard players set $A debug_mode 0
 
 
