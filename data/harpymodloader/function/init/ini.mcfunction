@@ -35,7 +35,7 @@ scoreboard players set $A timer 0
 # system_gamePlaying -> 游戏阶段
 #  0 -> lobby
 #  1 -> vote
-#  2 -> vote over
+#  vote over -> 100
 #  100 -> game playing
 
 # system_gamePlayed -> 游戏进行时间
