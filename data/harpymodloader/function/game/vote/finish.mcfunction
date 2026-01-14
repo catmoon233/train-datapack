@@ -1,6 +1,8 @@
 ## vote\finish.mcfunction
 # 投票功能生命周期结束时被执行 | 选择地图并清除计分项
 
+# 先开始再选图
+function harpymodloader:commands/raw_modstart
 
 # 票数不为最高的选项记分板重置
 execute as @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=0..}] unless score @s function_vote_mapcode_1 = $A function_vote_mapcode_1 run scoreboard players reset @s function_vote_mapcode_1
@@ -34,6 +36,6 @@ scoreboard objectives remove function_vote_ready
 # * 100-199 Game
 scoreboard players set $A system_gamePlaying 100
 
-function harpymodloader:commands/raw_modstart
+
 
 
