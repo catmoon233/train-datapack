@@ -89,27 +89,45 @@ kill @e[type=item,nbt={Item:{id:"minecraft:ender_pearl"}}]
 kill @e[type=ender_pearl]
 
 # 信息展示 (Unit: tick)
+
+
+
+execute store result score $player_count number run list
+##debug
+scoreboard players set $player_count number 6
+execute if score $player_count number matches 6.. run scoreboard players set $A setting_timer_type 0
+execute if score $player_count number matches ..5 run scoreboard players set $A setting_timer_type -1
+execute if score $player_count number matches ..5 run scoreboard players set $A timer 1200 
+
+
+
 execute if score $A timer matches 900 run title @a times 0t 55t 5t
 execute if score $A timer matches 900 run title @a title ""
 execute if score $A timer matches 900 run title @a subtitle {"text":"","extra": [{"text": "\u00a7e列车将在 \u00a7r\u00a7l45 \u00a7r\u00a7e秒后出发"}]}
 execute if score $A timer matches 900 run execute as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~
 
+
+execute unless entity @a[scores={function_vote_ready=0}] if score $A timer matches 252..1190 run function harpymodloader:game/vote/secondary/display/vote_display_allready
+
+
 execute if score $A timer matches 201 run title @a times 0t 10t 20t
 execute if score $A timer matches 0..200 run title @a title ""
 
-execute if score $A timer matches 200..600 unless score $A timer_tick_format matches 0..9 run title @a subtitle {"text":"","extra": [{"text": "\u00a7e启程倒计时 \u00a7r\u00a7l| \u00a7r"},{"score": {"name": "$A","objective": "timer_second"}},{"text": "."},{"score": {"name": "$A","objective": "timer_tick_format"}}]}
-execute if score $A timer matches 200..600 if score $A timer_tick_format matches 0..9 run title @a subtitle {"text":"","extra": [{"text": "\u00a7e启程倒计时 \u00a7r\u00a7l| \u00a7r"},{"score": {"name": "$A","objective": "timer_second"}},{"text": "."},{"score": {"name": "$A","objective": "timer_tick_format"}},{"text": "0"}]}
+execute if score $A timer matches 200 unless score $A timer_tick_format matches 0..9 run title @a subtitle {"text":"","extra": [{"text": "\u00a7e启程倒计时 \u00a7r\u00a7l| \u00a7r"},{"score": {"name": "$A","objective": "timer_second"}},{"text": "."},{"score": {"name": "$A","objective": "timer_tick_format"}}]}
+execute if score $A timer matches 200 if score $A timer_tick_format matches 0..9 run title @a subtitle {"text":"","extra": [{"text": "\u00a7e启程倒计时 \u00a7r\u00a7l| \u00a7r"},{"score": {"name": "$A","objective": "timer_second"}},{"text": "."},{"text": "0"},{"score": {"name": "$A","objective": "timer_tick_format"}}]}
 
 execute if score $A timer matches 0..199 unless score $A timer_tick_format matches 0..9 run title @a subtitle {"text":"","extra": [{"text": "\u00a7e启程倒计时 \u00a7r\u00a7l| \u00a7r0"},{"score": {"name": "$A","objective": "timer_second"}},{"text": "."},{"score": {"name": "$A","objective": "timer_tick_format"}}]}
 execute if score $A timer matches 0..119 unless score $A timer_tick_format matches 0..9 run title @a subtitle {"text":"","extra": [{"text": "\u00a7e启程倒计时 \u00a7r\u00a7l| \u00a7e0"},{"score": {"name": "$A","objective": "timer_second"},"color": "yellow"},{"text": "."},{"score": {"name": "$A","objective": "timer_tick_format"},"color": "yellow"}]}
 execute if score $A timer matches 0..79 unless score $A timer_tick_format matches 0..9 run title @a subtitle {"text":"","extra": [{"text": "\u00a7e启程倒计时 \u00a7r\u00a7l| \u00a7c0"},{"score": {"name": "$A","objective": "timer_second"},"color": "red"},{"text": "."},{"score": {"name": "$A","objective": "timer_tick_format"},"color": "red"}]}
 
 execute if score $A timer matches 0..199 if score $A timer_tick_format matches 0..9 run title @a subtitle {"text":"","extra": [{"text": "\u00a7e启程倒计时 \u00a7r\u00a7l| \u00a7r0"},{"score": {"name": "$A","objective": "timer_second"}},{"text": "."},{"score": {"name": "$A","objective": "timer_tick_format"}},{"text": "0"}]}
-execute if score $A timer matches 0..119 if score $A timer_tick_format matches 0..9 run title @a subtitle {"text":"","extra": [{"text": "\u00a7e启程倒计时 \u00a7r\u00a7l| \u00a7e0"},{"score": {"name": "$A","objective": "timer_second"},"color": "yellow"},{"text": "."},{"score": {"name": "$A","objective": "timer_tick_format"},"color": "yellow"},{"text": "0","color": "yellow"}]}
-execute if score $A timer matches 0..79 if score $A timer_tick_format matches 0..9 run title @a subtitle {"text":"","extra": [{"text": "\u00a7e启程倒计时 \u00a7r\u00a7l| \u00a7c0"},{"score": {"name": "$A","objective": "timer_second"},"color": "red"},{"text": "."},{"score": {"name": "$A","objective": "timer_tick_format"},"color": "red"},{"text": "0","color": "red"}]}
+execute if score $A timer matches 0..119 if score $A timer_tick_format matches 0..9 run title @a subtitle {"text":"","extra": [{"text": "\u00a7e启程倒计时 \u00a7r\u00a7l| \u00a7e0"},{"score": {"name": "$A","objective": "timer_second"},"color": "yellow"},{"text": "."},{"text": "0","color": "yellow"},{"score": {"name": "$A","objective": "timer_tick_format"},"color": "yellow"}]}
+execute if score $A timer matches 0..79 if score $A timer_tick_format matches 0..9 run title @a subtitle {"text":"","extra": [{"text": "\u00a7e启程倒计时 \u00a7r\u00a7l| \u00a7c0"},{"score": {"name": "$A","objective": "timer_second"},"color": "red"},{"text": "."},{"text": "0","color": "red"},{"score": {"name": "$A","objective": "timer_tick_format"},"color": "red"}]}
 
 execute if score $A timer matches 0..120 if score $A timer_tick matches 0 run execute as @a at @s run playsound minecraft:block.note_block.basedrum master @s ~ ~ ~
 execute if score $A timer matches 0 run execute as @a at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 1
+execute if score $A timer matches 0 run execute as @a at @s run playsound minecraft:event.mob_effect.raid_omen master @s ~ ~ ~ 1 0.8
+
 execute if score $A timer matches 0..120 if score $A timer_tick matches 0 run execute as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~
 execute if score $A timer matches 0..120 if score $A timer_tick matches 5 run execute as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 0.5
 execute if score $A timer matches 0..120 if score $A timer_tick matches 10 run execute as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 0.5

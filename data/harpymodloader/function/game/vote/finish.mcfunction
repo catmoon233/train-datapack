@@ -6,6 +6,8 @@
 execute as @e[type=exposure:photograph_frame,limit=1,scores={function_vote_mapcode=0..}] unless score @s function_vote_mapcode_1 = $A function_vote_mapcode_1 run scoreboard players reset @s function_vote_mapcode_1
 # 随机一个现存最高票数的选项
 function harpymodloader:game/vote/secondary/selectmap/secondary/7
+# 清除玩家侧准备方式
+clear @a ender_pearl
 
 tp @a[scores={function_vote_ready=0}] 100 0 100
 
@@ -27,8 +29,11 @@ scoreboard objectives remove function_vote_ready
 
 
 
+
 # * 0-99 Lobby
 # * 100-199 Game
 scoreboard players set $A system_gamePlaying 100
+
+function harpymodloader:commands/raw_modstart
 
 
