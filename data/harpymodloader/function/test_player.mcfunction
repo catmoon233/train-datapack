@@ -1,0 +1,9 @@
+player Alex spawn
+player Alex1 spawn
+player Alex2 spawn
+player Alex3 spawn
+player Alex4 spawn
+player Alex5 spawn
+player Alex6 spawn
+player Alex7 spawn
+player Alex8 spawn

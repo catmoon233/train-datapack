@@ -1,1 +1,0 @@
-execute as @e[type=exposure:photograph_frame,scores={function_vote_mapcode=0..}] if score @s function_vote_mapcode_1 > $A function_vote_mapcode_1 run scoreboard players operation $A function_vote_mapcode_1 = @s function_vote_mapcode_1
